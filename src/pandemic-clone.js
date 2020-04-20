@@ -28,15 +28,15 @@ export class Pandemic {
   
 }
 export class Player {
-  constructor(profession) {
+  constructor(profession, location) {
     this.profession = profession;
+    this.location = location
   }
 }
 
 export class Virus {
-  constructor(infected, speed) {
-    this.infected = infected;
-    this.speed = speed;
+  constructor(cure) {
+    this.cure = cure;
   }
 }
 
