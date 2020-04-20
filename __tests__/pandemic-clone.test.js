@@ -4,9 +4,14 @@ import { Virus } from '../src/pandemic-clone.js'
 import { City } from '../src/pandemic-clone.js'
 
 describe('Pandemic', () => {
+  jest.useFakeTimers();
+
+  afterEach(function(){
+    jest.clearAllTimers();
+  });
 
   test('should create new player object', () => {
-    let pandemic = new Pandemic;
+    let pandemic = new Pandemic();
     expect(pandemic.person).toEqual()
   })
   test('should create new Virus with base number of 10', () => {
@@ -14,7 +19,16 @@ describe('Pandemic', () => {
     let player = new Player("Scientist");
     let city = new City(10);
     expect(player.profession).toEqual("Scientist")
-    expect(virus.potency).toEqual(10)
+    expect(virus.infected).toEqual(10)
     expect(city.population).toEqual(10)
   })
-})
+  test('virus infected to increase to 15 after 60000 milliseconds', () => {
+    let player = new Player("Scientist")
+    let virus = new Virus(10,10);
+    let city = new City(100);
+    let pandemic = new Pandemic(player, virus, city);
+    pandemic.setInfected();
+    jest.advanceTimersByTime(60001);
+    expect(pandemic.virus.infected).toEqual(15);
+  });
+});
