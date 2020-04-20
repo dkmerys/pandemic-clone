@@ -40,4 +40,21 @@ describe('Pandemic', () => {
     pandemic.sanitize();
     expect(pandemic.virus.infected).toEqual(9);
   })
+
+  test('should decrease virus infected by 1', () => {
+    pandemic.sanitize();
+    expect(pandemic.virus.infected).toEqual(9);
+  })
+
+  test('should decrease virus infected by 5', () => {
+    pandemic.ppe();
+    expect(pandemic.virus.infected).toEqual(5);
+  })
+  
+  // test('quarantine should reduce the rate of infected by 3 per interval', () => {
+  //   pandemic.setInfected();
+  //   pandemic.quarantine();
+  //   jest.advanceTimersByTime(60001);
+  //   expect(pandemic.virus.infected).toEqual(12);
+  // });
 });

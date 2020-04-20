@@ -16,6 +16,15 @@ export class Pandemic {
     this.virus.infected -= 1;
   };
   
+  ppe() {
+    // this.virus.infected -= 5;
+  };
+
+  quarantine() {
+    setIntercan(() => {
+      this.virus.infected -= 3;
+    }, 60000);
+  }
   
 }
 export class Player {
