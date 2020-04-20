@@ -17,7 +17,7 @@ export class Pandemic {
   };
   
   ppe() {
-    // this.virus.infected -= 5;
+    this.virus.infected -= 5;
   };
 
   quarantine() {
