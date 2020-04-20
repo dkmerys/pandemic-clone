@@ -1,7 +1,7 @@
 export class Pandemic {
 
   constructor(player, virus) {
-    this.player = {};
-    this.virus = 20;
+    this.player = player;
+    // this.virus = virus;
   }
 }

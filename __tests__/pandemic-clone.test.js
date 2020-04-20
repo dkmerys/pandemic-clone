@@ -6,4 +6,8 @@ describe('Pandemic', () => {
     let pandemic = new Pandemic;
     expect(pandemic.person).toEqual()
   })
+  test('should create new Virus with base number of 20', () => {
+    let pandemic = new Pandemic(player,20);
+    expect(pandemic.virus).toEqual(20)
+  })
 })
