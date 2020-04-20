@@ -6,31 +6,42 @@ export class Pandemic {
     this.city = city;
   }
   
-  portlandOutbreak() {
+  Outbreak() {
     setTimeout(() => {
-      portland.setInfected(10);
+      this.city.setInfected();
     },45000);
   }
   
   sanitize() {
-    this.virus.infected -= 1;
+    this.city.infected -= 1;
   };
   
   ppe() {
-    this.virus.infected -= 5;
+    this.city.infected -= 5;
   };
   
   quarantine() {
     setInterval(() => {
-      this.virus.infected -= 3;
+      this.city.infected -= 3;
     }, 60000);
   }
   
+  win() {
+    if (this.virus.cure >= 5) {
+      alert("You Win!")
+    }
+  }
+  lose() {
+    if (this.city.infection >= 100) {
+      alert("You Lose!")
+    }
+  }
 }
 export class Player {
-  constructor(profession, location) {
+  constructor(profession, location, inventory) {
     this.profession = profession;
-    this.location = location
+    this.location = location;
+    this.inventory = inventory;
   }
 }
 
@@ -61,11 +72,14 @@ export class City {
         this.infected +=5;
         this.setInfected();
       }, 45000);
-    } else if (this.infected < 20) {
-      setTimeout(() => {
-        this.infected += 5;
+      } else if (this.infected >= 10) {
+        setTimeout(() => {
+          this.infected += 5;
+          this.setInfected();
+        }, 60000);
+      } else {
+        this.infected = 10;
         this.setInfected();
-      }, 60000);
     };
   };
 }
