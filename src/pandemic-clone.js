@@ -13,7 +13,7 @@ export class Pandemic {
   }
 
   sanitize() {
-    // this.virus.infected -= 1;
+    this.virus.infected -= 1;
   };
   
   
