@@ -51,10 +51,10 @@ describe('Pandemic', () => {
     expect(pandemic.virus.infected).toEqual(5);
   })
   
-  // test('quarantine should reduce the rate of infected by 3 per interval', () => {
-  //   pandemic.setInfected();
-  //   pandemic.quarantine();
-  //   jest.advanceTimersByTime(60001);
-  //   expect(pandemic.virus.infected).toEqual(12);
-  // });
+  test('quarantine should reduce the rate of infected by 3 per interval', () => {
+    pandemic.setInfected();
+    pandemic.quarantine();
+    jest.advanceTimersByTime(60001);
+    expect(pandemic.virus.infected).toEqual(12);
+  });
 });
