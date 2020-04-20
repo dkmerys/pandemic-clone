@@ -38,6 +38,6 @@ describe('Pandemic', () => {
 
   test('should decrease virus infected by 5', () => {
     sanitize();
-    expect(pandemic.virus.infected).toEqual(5);
+    expect(pandemic.virus.infected).toEqual(9);
   })
 });

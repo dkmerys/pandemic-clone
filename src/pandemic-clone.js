@@ -11,6 +11,10 @@ export class Pandemic {
       this.virus.infected += 5;
     }, 60000);
   }
+
+  sanitize() {
+    // this.virus.infected -= 1;
+  };
   
   
 }
