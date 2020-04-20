@@ -57,4 +57,11 @@ describe('Pandemic', () => {
     jest.advanceTimersByTime(60001);
     expect(pandemic.virus.infected).toEqual(12);
   });
+
+  test('should increase infected rate each time infected number doubles', () => {
+    pandemic.virus.infected = 20;
+    pandemic.setInfected();
+    jest.advanceTimersByTime(45001);
+    expect(pandemic.virus.infected).toEqual(25);
+  })
 });
