@@ -21,9 +21,9 @@ export class Pandemic {
   };
 
   quarantine() {
-    // setInterval(() => {
-    //   this.virus.infected -= 3;
-    // }, 60000);
+    setInterval(() => {
+      this.virus.infected -= 3;
+    }, 60000);
   }
   
 }
