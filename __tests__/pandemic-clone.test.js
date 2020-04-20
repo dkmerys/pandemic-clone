@@ -9,10 +9,10 @@ describe('Pandemic', () => {
     let pandemic = new Pandemic;
     expect(pandemic.person).toEqual()
   })
-  test('should create new Virus with base number of 20', () => {
-    let virus = new Virus(9,9);
-    let player = new Player("Circus Clown");
-    let city = new City(9);
+  test('should create new Virus with base number of 10', () => {
+    let virus = new Virus(10, 10);
+    let player = new Player("Scientist");
+    let city = new City(10);
     expect(player.profession).toEqual("Scientist")
     expect(virus.potency).toEqual(10)
     expect(city.population).toEqual(10)
