@@ -68,14 +68,19 @@ describe('Pandemic', () => {
   test('should increase infected rate each time infected number doubles', () => {
     pandemic.virus.infected = 40;
     pandemic.setInfected();
-    jest.advanceTimersByTime(30001);
+    jest.advanceTimersByTime(30000);
     expect(pandemic.virus.infected).toEqual(45);
   })
 
   test('should increase infected rate each time infected number doubles', () => {
     pandemic.virus.infected = 20;
     pandemic.setInfected();
-    jest.advanceTimersByTime(95001);
-    expect(pandemic.virus.infected).toEqual(35);
+    jest.advanceTimersByTime(500001);
+    expect(pandemic.virus.infected).toEqual(100);
   })
 });
+
+//20  25  30  35  40  45  50  55  60  65  70  75  80  85  90  95  100
+// +45 +45 +45 +45|+30 +30 +30 +30 +30 +30 +30 +30 |+20 +20 +20 +20
+//    +180        |             +240               |    +80
+//                       total: 500,000 milliseconds

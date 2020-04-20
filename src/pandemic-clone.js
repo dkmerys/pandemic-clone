@@ -8,20 +8,24 @@ export class Pandemic {
   
   setInfected() {
     if (this.virus.infected >= 80) {
-      setInterval(() => {
+      setTimeout(() => {
         this.virus.infected +=5;
+        this.setInfected();
       }, 20000);
     } else if (this.virus.infected >= 40) {
-      setInterval(() => {
+      setTimeout(() => {
         this.virus.infected +=5;
+        this.setInfected();
       }, 30000);
     } else if (this.virus.infected >= 20) {
-      setInterval(() => {
+      setTimeout(() => {
         this.virus.infected +=5;
+        this.setInfected();
       }, 45000);
-    } else {
-      setInterval(() => {
-      this.virus.infected += 5;
+    } else if (this.virus.infected < 20) {
+      setTimeout(() => {
+        this.virus.infected += 5;
+        this.setInfected();
       }, 60000);
     };
   };
