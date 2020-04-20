@@ -7,24 +7,24 @@ export class Pandemic {
   }
   
   setInfected() {
-    // if (this.this.virus.infected >= 80) {
-    //   setInterval(() => {
-    //     this.this.virus.infected +=5;
-    //   }, 20000);
-    // } else if (this.this.virus.infected >= 40) {
-    //   setInterval(() => {
-    //     this.this.virus.infected +=5;
-    //   }, 30000);
-    // } else if (this.this.virus.infected >= 20) {
-    //   setInterval(() => {
-    //     this.this.virus.infected +=5;
-    //   }, 45000);
-    // } else {
+    if (this.virus.infected >= 80) {
+      setInterval(() => {
+        this.virus.infected +=5;
+      }, 20000);
+    } else if (this.virus.infected >= 40) {
+      setInterval(() => {
+        this.virus.infected +=5;
+      }, 30000);
+    } else if (this.virus.infected >= 20) {
+      setInterval(() => {
+        this.virus.infected +=5;
+      }, 45000);
+    } else {
       setInterval(() => {
       this.virus.infected += 5;
       }, 60000);
     };
-  // };
+  };
 
   sanitize() {
     this.virus.infected -= 1;
