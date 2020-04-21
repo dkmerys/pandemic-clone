@@ -27,7 +27,7 @@ export class Pandemic {
   }
 
   createResearch() {
-    // this.virus.cure += 1
+    this.virus.cure += 1
   };
   
   win() {
