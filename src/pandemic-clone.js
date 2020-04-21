@@ -25,6 +25,10 @@ export class Pandemic {
       this.city.infected -= 3;
     }, 60000);
   }
+
+  createResearch() {
+    this.virus.cure += 1
+  };
   
   win() {
     if (this.virus.cure >= 5) {
