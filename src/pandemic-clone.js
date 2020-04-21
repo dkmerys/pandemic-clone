@@ -27,19 +27,14 @@ export class Pandemic {
   }
 
   createResearch() {
+    if (this.virus.cure >= 4) {
+      alert("You Win!")
+    } else {
     this.virus.cure += 1
+    }
   };
   
-  win() {
-    if (this.virus.cure >= 5) {
-      alert("You Win!")
-    }
-  }
-  lose() {
-    if (this.city.infection >= 100) {
-      alert("You Lose!")
-    }
-  }
+  
 }
 export class Player {
   constructor(profession, location, inventory) {
@@ -62,7 +57,9 @@ export class City {
     
   }
   setInfected() {
-    if (this.infected >= 80) {
+    if (this.city.infection >= 100) {
+      alert("You Lose!")
+    } else if (this.infected >= 80) {
       setTimeout(() => {
         this.infected +=5;
         this.setInfected();
