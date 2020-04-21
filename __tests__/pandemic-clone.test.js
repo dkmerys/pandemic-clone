@@ -36,11 +36,6 @@ describe('Pandemic', () => {
     expect(city.infected).toEqual(15);
   });
 
-  test('should decrease virus infected by 5', () => {
-    pandemic.sanitize();
-    expect(city.infected).toEqual(9);
-  })
-
   test('should decrease virus infected by 1', () => {
     pandemic.sanitize();
     expect(city.infected).toEqual(9);
