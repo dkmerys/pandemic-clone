@@ -93,7 +93,12 @@ describe('Pandemic', () => {
     let portland = new City();
     pandemic.Outbreak(portland.setInfected());
     jest.advanceTimersByTime(165001);
-    expect(portland.infected).toEqual(20);
+    expect(portland.infected).toEqual(25);
+  })
+
+  test('research function will increase the cure value by 1', () => {
+    pandemic.createResearch();
+    expect(virus.cure).toEqual(1);
   })
 });
 

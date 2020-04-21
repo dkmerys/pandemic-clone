@@ -52,8 +52,9 @@ export class Virus {
 }
 
 export class City {
-  constructor(infected) {
+  constructor(infected, research) {
     this.infected = infected;
+    this.research = research;
     
   }
   setInfected() {
